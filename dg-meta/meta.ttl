@@ -1,0 +1,18 @@
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.darkglass.com/lv2>
+    a owl:Ontology ;
+    doap:license <http://opensource.org/licenses/isc> ;
+    doap:name "Darkglass LV2 Meta" ;
+    doap:shortdesc "Darkglass LV2 metadata" ;
+    doap:created "2024-12-30" ;
+    doap:maintainer <http://falktx.berlin/darkglass> ;
+    rdfs:comment "This document describes LV2 metadata relevant to Darkglass products." .
+
+<http://falktx.berlin/darkglass>
+    a foaf:Person ;
+    foaf:name "Filipe Coelho" ;
+    foaf:mbox <mailto:falktx@darkglass.com> .

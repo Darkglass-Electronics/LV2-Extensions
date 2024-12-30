@@ -1,0 +1,20 @@
+@prefix dgprops: <http://www.darkglass.com/lv2/ns#> .
+@prefix lv2:     <http://lv2plug.in/ns/lv2core#> .
+@prefix opts:    <http://lv2plug.in/ns/ext/options#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.darkglass.com/lv2/ns>
+    a owl:Ontology ;
+    rdfs:seeAlso <props.h> ,
+        <props.doap.ttl> ,
+        <../dg-meta/meta.ttl> ;
+    rdfs:comment "A set of custom LV2 properties created by and for Darkglass related products." .
+
+dgprops:abbreviation
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "abbreviation" ;
+    rdfs:comment "Plugin name abbreviation consisting of 2 or 3 characters in uppercase." .
