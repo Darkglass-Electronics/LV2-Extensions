@@ -4,6 +4,7 @@
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix units:   <http://lv2plug.in/ns/extensions/units#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.darkglass.com/lv2/ns>
@@ -18,3 +19,10 @@ dgprops:abbreviation
     rdfs:range xsd:string ;
     rdfs:label "abbreviation" ;
     rdfs:comment "Plugin name abbreviation consisting of 2 or 3 characters in uppercase." .
+
+dgprops:oneDecimalPoint
+    a units:Unit ;
+    rdfs:label "One Decimal Point" ;
+    rdfs:comment "Meaningless unit that forces usage of 1 decimal point." ;
+    units:symbol "" ;
+    units:render "%.1f" .
