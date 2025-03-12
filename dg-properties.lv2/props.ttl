@@ -26,3 +26,8 @@ dgprops:oneDecimalPoint
     rdfs:comment "Meaningless unit that forces usage of 1 decimal point." ;
     units:symbol "" ;
     units:render "%.1f" .
+
+dgprops:notOnGUIsavedToPreset
+	a lv2:PortProperty ;
+	rdfs:label "not on GUI but saved to preset" ;
+	rdfs:comment "Port that usually shouldn't be displayed on a GUI, but is saved in preset data." .
