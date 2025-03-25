@@ -20,6 +20,11 @@ dgprops:abbreviation
     rdfs:label "abbreviation" ;
     rdfs:comment "Plugin name abbreviation consisting of 2 or 3 characters in uppercase." .
 
+dgprops:notOnGUIsavedToPreset
+    a lv2:PortProperty ;
+	rdfs:label "not on GUI but saved to preset" ;
+	rdfs:comment "Port that usually shouldn't be displayed on a GUI, but is saved in preset data." .
+
 dgprops:oneDecimalPoint
     a units:Unit ;
     rdfs:label "One Decimal Point" ;
@@ -27,7 +32,8 @@ dgprops:oneDecimalPoint
     units:symbol "" ;
     units:render "%.1f" .
 
-dgprops:notOnGUIsavedToPreset
-	a lv2:PortProperty ;
-	rdfs:label "not on GUI but saved to preset" ;
-	rdfs:comment "Port that usually shouldn't be displayed on a GUI, but is saved in preset data." .
+dgprops:quickPot
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:range xsd:float ;
+    rdfs:label "quick pot" ;
+    rdfs:comment "Quick Pot designated for an LV2 plugin." .

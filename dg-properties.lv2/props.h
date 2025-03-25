@@ -1,6 +1,6 @@
 /*
   LV2 Darkglass Properties Extension
-  Copyright 2024 Filipe Coelho <falktx@darkglass.com>
+  Copyright 2024-2025 Filipe Coelho <falktx@darkglass.com>
 
   Permission to use, copy, modify, and/or distribute this software for any
   purpose with or without fee is hereby granted, provided that the above
@@ -26,6 +26,8 @@
 #define LV2_DARKGLASS_PROPERTIES_URI    "http://www.darkglass.com/lv2/ns"
 #define LV2_DARKGLASS_PROPERTIES_PREFIX LV2_DARKGLASS_PROPERTIES_URI "#"
 
-#define LV2_DARKGLASS_PROPERTIES__abbreviation LV2_DARKGLASS_PROPERTIES_PREFIX "abbreviation"
+#define LV2_DARKGLASS_PROPERTIES__abbreviation    LV2_DARKGLASS_PROPERTIES_PREFIX "abbreviation"
+#define LV2_DARKGLASS_PROPERTIES__quickPot        LV2_DARKGLASS_PROPERTIES_PREFIX "quickPot"
+#define LV2_DARKGLASS_PROPERTIES__oneDecimalPoint LV2_DARKGLASS_PROPERTIES_PREFIX "oneDecimalPoint"
 
 #endif /* LV2_DARKGLASS_PROPERTIES_H */
