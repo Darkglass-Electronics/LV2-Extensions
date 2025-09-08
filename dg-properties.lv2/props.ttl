@@ -43,7 +43,7 @@ dgprops:quickPot
     a rdf:Property , owl:DatatypeProperty ;
     rdfs:range xsd:float ;
     rdfs:label "quick pot" ;
-    rdfs:comment "Quick Pot designated for an LV2 plugin." .
+    rdfs:comment "The parameter designated as the Quick Pot for a plugin." .
 
 dgprops:savedToPreset
     a lv2:PortProperty ;
