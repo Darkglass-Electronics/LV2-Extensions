@@ -20,10 +20,17 @@ dgprops:abbreviation
     rdfs:label "abbreviation" ;
     rdfs:comment "Plugin name abbreviation consisting of 2 or 3 characters in uppercase." .
 
-dgprops:notOnGUIsavedToPreset
-    a lv2:PortProperty ;
-	rdfs:label "not on GUI but saved to preset" ;
-	rdfs:comment "Port that usually shouldn't be displayed on a GUI, but is saved in preset data." .
+dgprops:blockImageOff
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "block image off" ;
+    rdfs:comment "Path to a in-bundle/local 200x200 PNG image file to be used as the plugin's block image asset when OFF." .
+
+dgprops:blockImageOn
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "block image on" ;
+    rdfs:comment "Path to a in-bundle/local  200x200 PNG image file to be used as the plugin's block image asset when ON." .
 
 dgprops:oneDecimalPoint
     a units:Unit ;
@@ -37,3 +44,8 @@ dgprops:quickPot
     rdfs:range xsd:float ;
     rdfs:label "quick pot" ;
     rdfs:comment "Quick Pot designated for an LV2 plugin." .
+
+dgprops:savedToPreset
+    a lv2:PortProperty ;
+    rdfs:label "saved to preset" ;
+    rdfs:comment "Force a parameter or property to be saved to preset." .
