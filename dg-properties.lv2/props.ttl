@@ -21,14 +21,14 @@ dgprops:abbreviation
     rdfs:comment "Plugin name abbreviation consisting of 2 or 3 characters in uppercase." .
 
 dgprops:blockImageOff
-    a rdf:Property , owl:DatatypeProperty ;
-    rdfs:range xsd:string ;
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range owl:Thing ;
     rdfs:label "block image off" ;
     rdfs:comment "Path to a in-bundle/local 200x200 PNG image file to be used as the plugin's block image asset when OFF." .
 
 dgprops:blockImageOn
-    a rdf:Property , owl:DatatypeProperty ;
-    rdfs:range xsd:string ;
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range owl:Thing ;
     rdfs:label "block image on" ;
     rdfs:comment "Path to a in-bundle/local  200x200 PNG image file to be used as the plugin's block image asset when ON." .
 
