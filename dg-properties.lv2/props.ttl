@@ -50,12 +50,7 @@ dgprops:savedToPreset
     rdfs:label "saved to preset" ;
     rdfs:comment "Force a parameter or property to be saved to preset." .
 
-dgprops:mayBecomeInactive
+dgprops:mayUpdateStateBlocked
     a lv2:PortProperty ;
-    rdfs:label "may become inactive" ;
-    rdfs:comment "Plugin may report this parameter as inactive (inaudible edits) at run-time." .
-
-dgprops:mayBecomeBlocked
-    a lv2:PortProperty ;
-    rdfs:label "may become blocked" ;
-    rdfs:comment "Plugin may report this parameter as blocked (not allowed) at run-time." .
+    rdfs:label "may get updated to blocked state" ;
+    rdfs:comment "Plugin may report this parameter as blocked (not value changes allowed / applied) at run-time." .
