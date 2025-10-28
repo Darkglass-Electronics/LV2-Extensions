@@ -46,8 +46,8 @@ typedef enum {
 /** A status code for LV2_CONTROL_PORT_STATE_UPDATE_URI functions. */
 typedef enum {
 	LV2_CONTROL_PORT_STATE_NONE     = 0,  /**< No special state / Remove any previously set states. */
-	LV2_CONTROL_PORT_STATE_INACTIVE = 1,  /**< Inactive state (edits to port value are inaudible / ineffective at the moment). */
-	LV2_CONTROL_PORT_STATE_BLOCKED  = 2   /**< Blocked state (all edits to this port's value should be blocked and are ignored internally in the plugin). */
+	LV2_CONTROL_PORT_STATE_INACTIVE = 1,  /**< Inactive state (updates to port value are inaudible / ineffective). */
+	LV2_CONTROL_PORT_STATE_BLOCKED  = 2   /**< Blocked state (updates to port value are ignored by the plugin and they should be blocked and ignored by the host). */
 } LV2_Control_Port_State;
 
 /**
