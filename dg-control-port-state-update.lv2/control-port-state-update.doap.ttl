@@ -1,0 +1,22 @@
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.darkglass.com/lv2/ns/lv2ext/control-port-state-update>
+    a doap:Project ;
+    rdfs:seeAlso <../dg-meta/meta.ttl> ;
+    doap:license <http://opensource.org/licenses/isc> ;
+    doap:name "Control Port State Update" ;
+    doap:homepage <http://www.darkglass.com/lv2/ns/lv2ext/control-port-state-update> ;
+    doap:created "2025-10-21" ;
+    doap:shortdesc "LV2 extension for allowing plugins to update the state of their control port." ;
+    doap:developer [
+		foaf:name "Darkglass" ;
+		foaf:homepage <https://www.darkglass.com/> ;
+		foaf:mbox <mailto:contact@darkglass.com> ;
+	] ;
+	doap:maintainer [
+		foaf:name "Darkglass" ;
+		foaf:homepage <https://www.darkglass.com/> ;
+		foaf:mbox <mailto:contact@darkglass.com> ;
+	] .
