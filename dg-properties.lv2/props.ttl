@@ -32,6 +32,11 @@ dgprops:blockImageOn
     rdfs:label "block image on" ;
     rdfs:comment "Path to a in-bundle/local  200x200 PNG image file to be used as the plugin's block image asset when ON." .
 
+dgprops:mayUpdateBlockedState
+    a lv2:PortProperty ;
+    rdfs:label "may get updated to blocked state" ;
+    rdfs:comment "Plugin may report this parameter as blocked (value updates blocked and ignored by the host and the plugin) at run-time." .
+
 dgprops:oneDecimalPoint
     a units:Unit ;
     rdfs:label "One Decimal Point" ;
@@ -49,8 +54,3 @@ dgprops:savedToPreset
     a lv2:PortProperty ;
     rdfs:label "saved to preset" ;
     rdfs:comment "Force a parameter or property to be saved to preset." .
-
-dgprops:mayUpdateBlockedState
-    a lv2:PortProperty ;
-    rdfs:label "may get updated to blocked state" ;
-    rdfs:comment "Plugin may report this parameter as blocked (value updates blocked and ignored by the host and the plugin) at run-time." .
