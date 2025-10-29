@@ -43,7 +43,7 @@ typedef enum {
 	LV2_CONTROL_PORT_STATE_UPDATE_ERR_INVALID_INDEX = 2   /**< Failed due to invalid port index. */
 } LV2_Control_Port_State_Update_Status;
 
-/** A status code for LV2_CONTROL_PORT_STATE_UPDATE_URI functions. */
+/** A control port state plugin can report to host. */
 typedef enum {
 	LV2_CONTROL_PORT_STATE_NONE     = 0,  /**< No special state / Remove any previously set states. */
 	LV2_CONTROL_PORT_STATE_INACTIVE = 1,  /**< Inactive state (updates to port value are inaudible / ineffective). */
