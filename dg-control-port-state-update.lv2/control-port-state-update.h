@@ -23,7 +23,11 @@
 #ifndef LV2_CONTROL_PORT_STATE_UPDATE_H
 #define LV2_CONTROL_PORT_STATE_UPDATE_H
 
+#if defined(__has_include) && __has_include("lv2/core/lv2.h")
+#include "lv2/core/lv2.h"
+#else
 #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
+#endif
 
 #define LV2_CONTROL_PORT_STATE_UPDATE_URI    "http://www.darkglass.com/lv2/ns/lv2ext/control-port-state-update"
 #define LV2_CONTROL_PORT_STATE_UPDATE_PREFIX LV2_CONTROL_PORT_STATE_UPDATE_URI "#"
