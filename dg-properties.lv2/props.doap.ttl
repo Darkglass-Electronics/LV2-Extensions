@@ -10,5 +10,13 @@
     doap:homepage <http://www.darkglass.com/lv2/ns> ;
     doap:created "2024-12-30" ;
     doap:shortdesc "LV2 extension for custom Darkglass properties." ;
-    doap:developer <https://falktx.com/> ;
-    doap:maintainer <https://falktx.com/> .
+    doap:developer [
+        foaf:name "Darkglass" ;
+        foaf:homepage <https://www.darkglass.com/> ;
+        foaf:mbox <mailto:contact@darkglass.com> ;
+    ] ;
+    doap:maintainer [
+        foaf:name "Darkglass" ;
+        foaf:homepage <https://www.darkglass.com/> ;
+        foaf:mbox <mailto:contact@darkglass.com> ;
+    ] .
