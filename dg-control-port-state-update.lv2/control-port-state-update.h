@@ -32,30 +32,26 @@
 #define LV2_CONTROL_PORT_STATE_UPDATE_URI    "http://www.darkglass.com/lv2/ns/lv2ext/control-port-state-update"
 #define LV2_CONTROL_PORT_STATE_UPDATE_PREFIX LV2_CONTROL_PORT_STATE_UPDATE_URI "#"
 
-#include <stdint.h>
-
 #ifdef __cplusplus
 extern "C" {
-#else
-#include <stdbool.h>
 #endif
 
 /** A status code for LV2_CONTROL_PORT_STATE_UPDATE_URI functions. */
 typedef enum {
-	LV2_CONTROL_PORT_STATE_UPDATE_SUCCESS           = 0,  /**< Completed successfully. */
-	LV2_CONTROL_PORT_STATE_UPDATE_ERR_UNKNOWN       = 1,  /**< Unknown error. */
-	LV2_CONTROL_PORT_STATE_UPDATE_ERR_INVALID_INDEX = 2   /**< Failed due to invalid port index. */
+    LV2_CONTROL_PORT_STATE_UPDATE_SUCCESS           = 0,  /**< Completed successfully. */
+    LV2_CONTROL_PORT_STATE_UPDATE_ERR_UNKNOWN       = 1,  /**< Unknown error. */
+    LV2_CONTROL_PORT_STATE_UPDATE_ERR_INVALID_INDEX = 2   /**< Failed due to invalid port index. */
 } LV2_Control_Port_State_Update_Status;
 
 /** A control port state plugin can report to host. */
 typedef enum {
-	LV2_CONTROL_PORT_STATE_NONE     = 0,  /**< No special state / Remove any previously set states. */
-	LV2_CONTROL_PORT_STATE_INACTIVE = 1,  /**< Inactive state (updates to port value are inaudible / ineffective). */
-	LV2_CONTROL_PORT_STATE_BLOCKED  = 2   /**< Blocked state (updates to port value are ignored by the plugin and they should be blocked and ignored by the host). */
+    LV2_CONTROL_PORT_STATE_NONE     = 0,  /**< No special state / Remove any previously set states. */
+    LV2_CONTROL_PORT_STATE_INACTIVE = 1,  /**< Inactive state (updates to port value are inaudible / ineffective). */
+    LV2_CONTROL_PORT_STATE_BLOCKED  = 2   /**< Blocked state (updates to port value are ignored by the plugin and they should be blocked and ignored by the host). */
 } LV2_Control_Port_State;
 
 /**
- *  Opaque handle for LV2_CONTROL_PORT_STATE_UPDATE_URI feature.
+ * Opaque handle for LV2_CONTROL_PORT_STATE_UPDATE_URI feature.
  */
 typedef void* LV2_Control_Port_State_Update_Handle;
 
