@@ -1,0 +1,382 @@
+@prefix dgcs: <http://www.darkglass.com/lv2/ns/lv2ext/custom-styling#> .
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.darkglass.com/lv2/ns/lv2ext/custom-styling>
+    a owl:Ontology ;
+    rdfs:seeAlso <custom-styling.h> ,
+        <custom-styling.doap.ttl> ,
+        <../dg-meta/meta.ttl> ;
+    rdfs:comment "A set of custom LV2 properties related to Darkglass Anagram block image and settings styling." .
+
+dgcs:Alignment
+    a rdfs:Class , owl:Class ;
+    rdfs:label "alignment" ;
+    rdfs:comment "Alignment for images when they don't match the full size of the container." .
+
+dgcs:BlockImage
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block image" ;
+    rdfs:comment "A block image contains a path (for the image itself) and parameters." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty dgcs:path ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block image MUST have exactly one dgcs:path."
+    ] .
+
+dgcs:BlockImageBypass
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block image bypass" ;
+    rdfs:comment "Bypass parameter for a Block Image" ;
+    rdfs:subClassOf dgcs:BypassBase , dgcs:BlockImageParameterBase .
+
+dgcs:BlockImageParameterBase
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block image parameter" ;
+    rdfs:comment """Base class for a block image parameter.
+A block image parameter uses a single image path and x,y coordinates for positioning.
+The width and height are optional helpers.""" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty dgcs:path ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block image parameter MUST have exactly one dgcs:path."
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty dgcs:x ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block image parameter MUST have exactly one dgcs:x."
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty dgcs:y ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block image parameter MUST have exactly one dgcs:y."
+    ] .
+
+dgcs:BlockImageParameter
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block image parameter" ;
+    rdfs:comment "A block image parameter, specified by control port symbol" ;
+    rdfs:subClassOf dgcs:BlockImageParameterBase ,
+    [
+        a owl:Restriction ;
+        owl:onProperty lv2:symbol ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block image parameter MUST have exactly one lv2:symbol."
+    ] .
+
+dgcs:BlockSettings
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings" ;
+    rdfs:comment "Settings for a Block, contains many elements." .
+
+dgcs:BlockSettingsBlockName
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings block name" ;
+    rdfs:comment """The block name can either be a background image or a custom font.
+Use of background image takes precedence if both are provided.
+It is 1 layer above the background.""" .
+
+dgcs:BlockSettingsParameterBase
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings parameter base" ;
+    rdfs:comment """Base class for a block settings parameter widget, either the default widget or parameter-specific.
+A block settings parameter uses images for background, background-with-scenes and control.
+Additionally it has overlays for many parameter statuses.
+The control depends on the type of parameter and can be one of: knob, list, meter or toggle/switch.
+Only the control is required, everything else is optional.""" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty dgcs:control ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block setttings parameter MUST have exactly one dgcs:control."
+    ] .
+
+dgcs:BlockSettingsBypass
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings bypass" ;
+    rdfs:comment "Bypass-specific widget" ;
+    rdfs:subClassOf dgcs:BypassBase , dgcs:BlockSettingsParameterBase .
+
+dgcs:BlockSettingsDefaultWidget
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings default widget" ;
+    rdfs:comment "Default parameter widget in case a specific parameter is not specified" ;
+    rdfs:subClassOf dgcs:BlockSettingsParameterBase .
+
+dgcs:BlockSettingsParameterWidget
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings parameter widget" ;
+    rdfs:comment "Parameter-specific widget, specified by control port symbol" ;
+    rdfs:subClassOf dgcs:BlockSettingsParameterBase ,
+    [
+        a owl:Restriction ;
+        owl:onProperty lv2:symbol ;
+        owl:cardinality 1 ;
+        rdfs:comment "A block setttings parameter MUST have exactly one lv2:symbol."
+    ] .
+
+dgcs:BlockSettingsTopBarButtons
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings topbar buttons" ;
+    rdfs:comment """The settings' top-bar buttons are images without any alignment.
+These images must be the correct size or are otherwise rejected.
+They are 1 layer above the block name.""" .
+
+dgcs:BypassBase
+    a rdfs:Class , owl:Class ;
+    rdfs:label "bypass base" ;
+    rdfs:comment "Base class for a bypass parameter, either in block image or block settings" .
+
+dgcs:Font
+    a rdfs:Class , owl:Class ;
+    rdfs:label "font" ;
+    rdfs:comment "A font requires a path and size." ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty dgcs:path ;
+        owl:cardinality 1 ;
+        rdfs:comment "An image MUST have exactly one dgcs:path."
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty dgcs:size ;
+        owl:cardinality 1 ;
+        rdfs:comment "An image MUST have exactly one dgcs:size."
+    ] .
+
+dgcs:Image
+    a rdfs:Class , owl:Class ;
+    rdfs:label "image" ;
+    rdfs:comment """An image requires a path, alignment is optional as it is not always relevant.
+If the image belongs to a parameter control, animation frames must be used (from min to max).
+If the image belongs to a bypass control, at least 2 animation frames are required (on is first, then off/bypassed).
+If the image belongs to a block, animation frames are optional (if present: on is first, then off/bypassed).""" ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty dgcs:path ;
+        owl:cardinality 1 ;
+        rdfs:comment "An image MUST have exactly one dgcs:path."
+    ] .
+
+dgcs:alignment
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:Image ;
+    rdfs:range dgcs:Alignment ;
+    rdfs:label "alignment" ;
+    rdfs:comment "The alignment of an image." .
+
+dgcs:alignBottomLeft
+    a dgcs:Alignment ;
+    rdfs:label "align bottom left" .
+
+dgcs:alignBottomMid
+    a dgcs:Alignment ;
+    rdfs:label "align bottom mid" .
+
+dgcs:alignBottomRight
+    a dgcs:Alignment ;
+    rdfs:label "align bottom right" .
+
+dgcs:alignCenter
+    a dgcs:Alignment ;
+    rdfs:label "align center" .
+
+dgcs:alignLeftMid
+    a dgcs:Alignment ;
+    rdfs:label "align left mid" .
+
+dgcs:alignRightMid
+    a dgcs:Alignment ;
+    rdfs:label "align right mid" .
+
+dgcs:alignTopLeft
+    a dgcs:Alignment ;
+    rdfs:label "align top left" .
+
+dgcs:alignTopMid
+    a dgcs:Alignment ;
+    rdfs:label "align top mid" .
+
+dgcs:alignTopRight
+    a dgcs:Alignment ;
+    rdfs:label "align top right" .
+
+dgcs:background
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "background" .
+
+dgcs:back
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "back" ;
+    rdfs:comment "The back button on the block settings top bar." .
+
+dgcs:backgroundScenes
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "background scenes" .
+
+dgcs:blockImage
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain lv2:PluginBase ;
+    rdfs:range dgcs:BlockImage ;
+    rdfs:label "block image" ;
+    rdfs:comment "The block image of a plugin." .
+
+dgcs:blockName
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain lv2:PluginBase ;
+    rdfs:range dgcs:BlockSettingsBlockName ;
+    rdfs:label "block settings block name" ;
+    rdfs:comment "The block name area of the block settings." .
+
+dgcs:blockSettings
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain lv2:PluginBase ;
+    rdfs:range dgcs:BlockSettings ;
+    rdfs:label "block settings" ;
+    rdfs:comment "The block settings of a plugin." .
+
+dgcs:bypass
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain lv2:PluginBase ;
+    rdfs:range dgcs:BypassBase ;
+    rdfs:label "bypass" .
+
+dgcs:close
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "close" ;
+    rdfs:comment "The close button on the block settings top bar." .
+
+dgcs:control
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsParameterBase ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "control" .
+
+dgcs:font
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range dgcs:Font ;
+    rdfs:label "font" .
+
+dgcs:height
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:BlockImageParameterBase ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "height" ;
+    rdfs:comment "Height of a single frame of a block image parameter." .
+
+dgcs:knob
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsDefaultWidget ;
+    rdfs:label "knob" .
+
+dgcs:list
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsDefaultWidget ;
+    rdfs:label "list" .
+
+dgcs:meter
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsDefaultWidget ;
+    rdfs:label "meter" .
+
+dgcs:more
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "more" ;
+    rdfs:comment "The more button on the block settings top bar." .
+
+dgcs:paginationDots
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "pagination dots" ;
+    rdfs:comment """The pagination dots assume a number of frames equivalent to the number of parameter pages.
+They are 1 layer above the background.""" .
+
+dgcs:parameters
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockImage ;
+    rdfs:range dgcs:BlockImageParameter ;
+    rdfs:label "parameters" ;
+    rdfs:comment "Parameters on a block image or block settings." .
+
+dgcs:parameterStartPadding
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "parameter start padding" ;
+    rdfs:comment "Padding of empty slots until parameters begin." .
+
+dgcs:path
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range owl:Thing ;
+    rdfs:label "path" ;
+    rdfs:comment "Path for this resource, it must reside inside the plugin bundle or otherwise it's considered invalid." .
+
+dgcs:remove
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "remove" ;
+    rdfs:comment "The remove button on the block settings top bar." .
+
+dgcs:size
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:Font ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "size" ;
+    rdfs:comment "Size of a font." .
+
+dgcs:swap
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "swap" ;
+    rdfs:comment "The swap button on the block settings top bar." .
+
+dgcs:toggle
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsDefaultWidget ;
+    rdfs:label "toggle" .
+
+dgcs:topBarButtons
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsTopBarButtons ;
+    rdfs:label "top bar buttons" .
+
+dgcs:width
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:BlockImageParameterBase ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "width" ;
+    rdfs:comment "Width of a single frame of a block image parameter." .
+
+dgcs:x
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:BlockImageParameterBase ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "x" ;
+    rdfs:comment "X coordinate for positioning a block image parameter." .
+
+dgcs:y
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:BlockImageParameterBase ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "y" ;
+    rdfs:comment "Y coordinate for positioning a block image parameter." .
