@@ -11,12 +11,12 @@
     doap:created "2025-10-21" ;
     doap:shortdesc "LV2 extension for allowing plugins to update the state of their control port." ;
     doap:developer [
-		foaf:name "Darkglass" ;
-		foaf:homepage <https://www.darkglass.com/> ;
-		foaf:mbox <mailto:contact@darkglass.com> ;
-	] ;
-	doap:maintainer [
-		foaf:name "Darkglass" ;
-		foaf:homepage <https://www.darkglass.com/> ;
-		foaf:mbox <mailto:contact@darkglass.com> ;
-	] .
+        foaf:name "Darkglass" ;
+        foaf:homepage <https://www.darkglass.com/> ;
+        foaf:mbox <mailto:contact@darkglass.com> ;
+    ] ;
+    doap:maintainer [
+        foaf:name "Darkglass" ;
+        foaf:homepage <https://www.darkglass.com/> ;
+        foaf:mbox <mailto:contact@darkglass.com> ;
+    ] .
