@@ -74,13 +74,6 @@ dgcs:BlockSettings
     rdfs:label "block settings" ;
     rdfs:comment "Settings for a Block, contains many elements." .
 
-dgcs:BlockSettingsBlockName
-    a rdfs:Class , owl:Class ;
-    rdfs:label "block settings block name" ;
-    rdfs:comment """The block name can either be a background image or a custom font.
-Use of background image takes precedence if both are provided.
-It is 1 layer above the background.""" .
-
 dgcs:BlockSettingsParameterBase
     a rdfs:Class , owl:Class ;
     rdfs:label "block settings parameter base" ;
@@ -120,12 +113,29 @@ dgcs:BlockSettingsParameterWidget
         rdfs:comment "A block setttings parameter MUST have exactly one lv2:symbol."
     ] .
 
+dgcs:BlockSettingsTopBar
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings top-bar" ;
+    rdfs:comment """The top-bar background and buttons.
+It is 1 layer above the background.""" .
+
+dgcs:BlockSettingsTopBarBlockName
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings top-bar block name" ;
+    rdfs:comment """The top-bar block name can either be a background image or a custom font.
+Use of background image takes precedence if both are provided.""" .
+
 dgcs:BlockSettingsTopBarButtons
     a rdfs:Class , owl:Class ;
-    rdfs:label "block settings topbar buttons" ;
-    rdfs:comment """The settings' top-bar buttons are images without any alignment.
-These images must be the correct size or are otherwise rejected.
-They are 1 layer above the block name.""" .
+    rdfs:label "block settings top-bar buttons" ;
+    rdfs:comment """The top-bar buttons are images without any alignment.
+These images must be the correct size or are otherwise rejected.""" .
+
+dgcs:BlockSettingsTopBarSceneControl
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings top-bar scene control" ;
+    rdfs:comment """The top-bar scene control can either be images or background + font.
+Use of images takes precedence if both are provided.""" .
 
 dgcs:BypassBase
     a rdfs:Class , owl:Class ;
@@ -210,13 +220,6 @@ dgcs:background
     rdfs:range dgcs:Image ;
     rdfs:label "background" .
 
-dgcs:back
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
-    rdfs:range owl:Thing ;
-    rdfs:label "back" ;
-    rdfs:comment "The back button on the block settings top bar." .
-
 dgcs:backgroundScenes
     a rdf:Property , owl:ObjectProperty ;
     rdfs:range dgcs:Image ;
@@ -229,13 +232,6 @@ dgcs:blockImage
     rdfs:label "block image" ;
     rdfs:comment "The block image of a plugin." .
 
-dgcs:blockName
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain lv2:PluginBase ;
-    rdfs:range dgcs:BlockSettingsBlockName ;
-    rdfs:label "block settings block name" ;
-    rdfs:comment "The block name area of the block settings." .
-
 dgcs:blockSettings
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain lv2:PluginBase ;
@@ -243,18 +239,46 @@ dgcs:blockSettings
     rdfs:label "block settings" ;
     rdfs:comment "The block settings of a plugin." .
 
-dgcs:bypass
+dgcs:buttonBack
     a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain lv2:PluginBase ;
-    rdfs:range dgcs:BypassBase ;
-    rdfs:label "bypass" .
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "back" ;
+    rdfs:comment "The back button on the block settings top bar." .
 
-dgcs:close
+dgcs:buttonClose
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettingsTopBarButtons ;
     rdfs:range owl:Thing ;
     rdfs:label "close" ;
     rdfs:comment "The close button on the block settings top bar." .
+
+dgcs:buttonMore
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "more" ;
+    rdfs:comment "The more button on the block settings top bar." .
+
+dgcs:buttonRemove
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "remove" ;
+    rdfs:comment "The remove button on the block settings top bar." .
+
+dgcs:buttonSwap
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
+    rdfs:range owl:Thing ;
+    rdfs:label "swap" ;
+    rdfs:comment "The swap button on the block settings top bar." .
+
+dgcs:bypass
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain lv2:PluginBase ;
+    rdfs:range dgcs:BypassBase ;
+    rdfs:label "bypass" .
 
 dgcs:control
     a rdf:Property , owl:ObjectProperty ;
@@ -292,13 +316,6 @@ dgcs:meter
     rdfs:range dgcs:BlockSettingsDefaultWidget ;
     rdfs:label "meter" .
 
-dgcs:more
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
-    rdfs:range owl:Thing ;
-    rdfs:label "more" ;
-    rdfs:comment "The more button on the block settings top bar." .
-
 dgcs:paginationDots
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettings ;
@@ -327,12 +344,17 @@ dgcs:path
     rdfs:label "path" ;
     rdfs:comment "Path for this resource, it must reside inside the plugin bundle or otherwise it's considered invalid." .
 
-dgcs:remove
+dgcs:sceneControlActiveScene
     a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
-    rdfs:range owl:Thing ;
-    rdfs:label "remove" ;
-    rdfs:comment "The remove button on the block settings top bar." .
+    rdfs:domain dgcs:BlockSettingsTopBarSceneControl ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "scene control active scene" .
+
+dgcs:sceneControlAllScenes
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBarSceneControl ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "scene control all scenes" .
 
 dgcs:size
     a rdf:Property , owl:DatatypeProperty ;
@@ -341,24 +363,39 @@ dgcs:size
     rdfs:label "size" ;
     rdfs:comment "Size of a font." .
 
-dgcs:swap
-    a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain dgcs:BlockSettingsTopBarButtons ;
-    rdfs:range owl:Thing ;
-    rdfs:label "swap" ;
-    rdfs:comment "The swap button on the block settings top bar." .
-
 dgcs:toggle
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettings ;
     rdfs:range dgcs:BlockSettingsDefaultWidget ;
     rdfs:label "toggle" .
 
-dgcs:topBarButtons
+dgcs:topBar
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsTopBar ;
+    rdfs:label "top-bar" ;
+    rdfs:comment "The block settings top-bar." .
+
+dgcs:topBarBlockName
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBar ;
+    rdfs:range dgcs:BlockSettingsTopBarBlockName ;
+    rdfs:label "top-bar block name" ;
+    rdfs:comment "The block name area of the block settings top-bar." .
+
+dgcs:topBarButtons
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBar ;
     rdfs:range dgcs:BlockSettingsTopBarButtons ;
-    rdfs:label "top bar buttons" .
+    rdfs:label "top-bar buttons" ;
+    rdfs:comment "The buttons in the block settings top-bar." .
+
+dgcs:topBarSceneControl
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBar ;
+    rdfs:range dgcs:BlockSettingsTopBarSceneControl ;
+    rdfs:label "top-bar scene control" ;
+    rdfs:comment "The scene control in the block settings top-bar." .
 
 dgcs:width
     a rdf:Property , owl:DatatypeProperty ;
