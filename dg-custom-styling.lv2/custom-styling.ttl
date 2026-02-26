@@ -161,7 +161,7 @@ dgcs:Font
 dgcs:Image
     a rdfs:Class , owl:Class ;
     rdfs:label "image" ;
-    rdfs:comment """An image requires a path, alignment is optional as it is not always relevant.
+    rdfs:comment """An image requires a path, alignment and offset are optional as they are not always relevant.
 If the image belongs to a parameter control, animation frames must be used (from min to max).
 If the image belongs to a bypass control, at least 2 animation frames are required (on is first, then off/bypassed).
 If the image belongs to a block, animation frames are optional (if present: on is first, then off/bypassed).""" ;
@@ -315,6 +315,20 @@ dgcs:meter
     rdfs:domain dgcs:BlockSettings ;
     rdfs:range dgcs:BlockSettingsDefaultWidget ;
     rdfs:label "meter" .
+
+dgcs:offsetX
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:Image ;
+    rdfs:range xsd:integer ;
+    rdfs:label "offset x" ;
+    rdfs:comment "X offset of an image." .
+
+dgcs:offsetY
+    a rdf:Property , owl:DatatypeProperty ;
+    rdfs:domain dgcs:Image ;
+    rdfs:range xsd:integer ;
+    rdfs:label "offset y" ;
+    rdfs:comment "Y offset of an image." .
 
 dgcs:paginationDots
     a rdf:Property , owl:ObjectProperty ;
