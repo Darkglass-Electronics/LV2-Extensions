@@ -47,7 +47,8 @@ typedef enum {
 typedef enum {
     LV2_CONTROL_PORT_STATE_NONE     = 0,  /**< No special state / Remove any previously set states. */
     LV2_CONTROL_PORT_STATE_INACTIVE = 1,  /**< Inactive state (updates to port value are inaudible / ineffective). */
-    LV2_CONTROL_PORT_STATE_BLOCKED  = 2   /**< Blocked state (updates to port value are ignored by the plugin and they should be blocked and ignored by the host). */
+    LV2_CONTROL_PORT_STATE_BLOCKED  = 2,  /**< Blocked state (updates to port value are ignored by the plugin and they should be blocked and ignored by the host). */
+    LV2_CONTROL_PORT_STATE_HIDDEN   = 3   /**< Hidden state (same as blocked but also hidden from the user). */
 } LV2_Control_Port_State;
 
 /**
