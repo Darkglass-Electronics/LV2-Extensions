@@ -95,6 +95,12 @@ dgcs:BlockSettingsBypass
     rdfs:comment "Bypass-specific widget" ;
     rdfs:subClassOf dgcs:BypassBase , dgcs:BlockSettingsParameterBase .
 
+dgcs:BlockSettingsBypassControlImage
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings bypass control image" ;
+    rdfs:comment "Bypass-specific control widget image" ;
+    rdfs:subClassOf dgcs:BlockImage .
+
 dgcs:BlockSettingsDefaultWidget
     a rdfs:Class , owl:Class ;
     rdfs:label "block settings default widget" ;
@@ -293,7 +299,7 @@ dgcs:font
 
 dgcs:height
     a rdf:Property , owl:DatatypeProperty ;
-    rdfs:domain dgcs:BlockImageParameterBase ;
+    rdfs:domain dgcs:BlockImageParameterBase , dgcs:BlockSettingsBypassControlImage ;
     rdfs:range xsd:nonNegativeInteger ;
     rdfs:label "height" ;
     rdfs:comment "Height of a single frame of a block image parameter." .
@@ -413,7 +419,7 @@ dgcs:topBarSceneControl
 
 dgcs:width
     a rdf:Property , owl:DatatypeProperty ;
-    rdfs:domain dgcs:BlockImageParameterBase ;
+    rdfs:domain dgcs:BlockImageParameterBase , dgcs:BlockSettingsBypassControlImage ;
     rdfs:range xsd:nonNegativeInteger ;
     rdfs:label "width" ;
     rdfs:comment "Width of a single frame of a block image parameter." .
