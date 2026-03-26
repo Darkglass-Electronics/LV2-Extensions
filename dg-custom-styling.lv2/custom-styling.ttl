@@ -111,8 +111,7 @@ dgcs:BlockSettingsParameterWidget
     a rdfs:Class , owl:Class ;
     rdfs:label "block settings parameter widget" ;
     rdfs:comment "Parameter-specific widget, specified by control port symbol" ;
-    rdfs:subClassOf dgcs:BlockSettingsParameterBase ,
-    [
+    rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty lv2:symbol ;
         owl:cardinality 1 ;
