@@ -118,6 +118,11 @@ dgcs:BlockSettingsParameterWidget
         rdfs:comment "A block setttings parameter MUST have exactly one lv2:symbol."
     ] .
 
+dgcs:BlockSettingsParameterWidgetStyle
+    a rdfs:Class , owl:Class ;
+    rdfs:label "block settings parameter widget style" ;
+    rdfs:comment "Alternative style to apply to a parameter widget." .
+
 dgcs:BlockSettingsTopBar
     a rdfs:Class , owl:Class ;
     rdfs:label "block settings top-bar" ;
@@ -176,6 +181,12 @@ If the image belongs to a block, animation frames are optional (if present: on i
         owl:cardinality 1 ;
         rdfs:comment "An image MUST have exactly one dgcs:path."
     ] .
+
+dgcs:Overlay
+    a rdfs:Class , owl:Class ;
+    rdfs:label "overlay" ;
+    rdfs:comment "An overlay always uses an image for background, optionally a custom font too" ;
+    rdfs:subClassOf dgcs:BlockImage .
 
 dgcs:alignment
     a rdf:Property , owl:ObjectProperty ;
@@ -291,6 +302,10 @@ dgcs:control
     rdfs:range dgcs:Image ;
     rdfs:label "control" .
 
+dgcs:fader
+    a dgcs:BlockSettingsParameterWidgetStyle ;
+    rdfs:label "fader" .
+
 dgcs:font
     a rdf:Property , owl:ObjectProperty ;
     rdfs:range dgcs:Font ;
@@ -314,6 +329,14 @@ dgcs:list
     rdfs:domain dgcs:BlockSettings ;
     rdfs:range dgcs:BlockSettingsDefaultWidget ;
     rdfs:label "list" .
+
+dgcs:listWith2Slots
+    a dgcs:BlockSettingsParameterWidgetStyle ;
+    rdfs:label "list with 2 slots" .
+
+dgcs:listWith3Slots
+    a dgcs:BlockSettingsParameterWidgetStyle ;
+    rdfs:label "list with 3 slots" .
 
 dgcs:meter
     a rdf:Property , owl:ObjectProperty ;
@@ -391,6 +414,13 @@ dgcs:size
     rdfs:range xsd:nonNegativeInteger ;
     rdfs:label "size" ;
     rdfs:comment "Size of a font." .
+
+dgcs:style
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsParameterWidget ;
+    rdfs:range dgcs:BlockSettingsParameterWidgetStyle ;
+    rdfs:label "style" ;
+    rdfs:comment "Alternative style to apply to a parameter widget." .
 
 dgcs:toggle
     a rdf:Property , owl:ObjectProperty ;
