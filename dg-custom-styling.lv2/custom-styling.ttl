@@ -337,12 +337,11 @@ dgcs:offsetY
 
 dgcs:paginationButton
     a rdf:Property , owl:ObjectProperty ;
-    rdfs:domain dgcs:BlockSettings ;
+    rdfs:domain dgcs:BlockSettingsTopBar ;
     rdfs:range dgcs:Image ;
     rdfs:label "pagination button" ;
-    rdfs:comment """The pagination button is assumed to have a number of frames equivalent to the number of parameter pages.
-It is 1 layer above the top-bar.
-If both pagination button and dots are provided, button takes precedence.
+    rdfs:comment """The top-bar pagination button has a number of frames equivalent to the number of parameter pages.
+If both top-bar pagination button and pagination dots are provided, the top-bar button takes precedence.
 Note: Pagination through scrolling is disabled when this button is present.""" .
 
 dgcs:paginationDots
@@ -350,9 +349,9 @@ dgcs:paginationDots
     rdfs:domain dgcs:BlockSettings ;
     rdfs:range dgcs:Image ;
     rdfs:label "pagination dots" ;
-    rdfs:comment """The pagination dots are assumed to have a number of frames equivalent to the number of parameter pages.
+    rdfs:comment """The pagination dots have a number of frames equivalent to the number of parameter pages.
 They are 1 layer above the background.
-If both pagination button and dots are provided, button takes precedence.""" .
+If both top-bar pagination button and pagination dots are provided, the top-bar button takes precedence.""" .
 
 dgcs:parameters
     a rdf:Property , owl:ObjectProperty ;
