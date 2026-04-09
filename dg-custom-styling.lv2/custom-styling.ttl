@@ -138,8 +138,7 @@ Use of background image takes precedence if both are provided.""" .
 dgcs:BlockSettingsTopBarButtons
     a rdfs:Class , owl:Class ;
     rdfs:label "block settings top-bar buttons" ;
-    rdfs:comment """The top-bar buttons are images without any alignment.
-These images must be the correct size or are otherwise rejected.""" .
+    rdfs:comment "The top-bar buttons are images with a fixed horizontal position and always centered vertically." .
 
 dgcs:BlockSettingsTopBarSceneControl
     a rdfs:Class , owl:Class ;
@@ -260,35 +259,35 @@ dgcs:buttonBack
     rdfs:domain dgcs:BlockSettingsTopBarButtons ;
     rdfs:range owl:Thing ;
     rdfs:label "back" ;
-    rdfs:comment "The back button on the block settings top bar." .
+    rdfs:comment "The back button on the block settings top bar, used in quickpot and binding param select screens." .
 
 dgcs:buttonClose
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettingsTopBarButtons ;
     rdfs:range owl:Thing ;
     rdfs:label "close" ;
-    rdfs:comment "The close button on the block settings top bar." .
+    rdfs:comment "The close button on the block settings top bar, used in regular block settings screen." .
 
 dgcs:buttonMore
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettingsTopBarButtons ;
     rdfs:range owl:Thing ;
     rdfs:label "more" ;
-    rdfs:comment "The more button on the block settings top bar." .
+    rdfs:comment "The more button on the block settings top bar, used for showing a submenu with extra actions." .
 
 dgcs:buttonRemove
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettingsTopBarButtons ;
     rdfs:range owl:Thing ;
     rdfs:label "remove" ;
-    rdfs:comment "The remove button on the block settings top bar." .
+    rdfs:comment "The remove button on the block settings top bar, used for removing a block from the chain." .
 
 dgcs:buttonSwap
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettingsTopBarButtons ;
     rdfs:range owl:Thing ;
     rdfs:label "swap" ;
-    rdfs:comment "The swap button on the block settings top bar." .
+    rdfs:comment "The swap button on the block settings top bar, used for swapping the current block with another one." .
 
 dgcs:bypass
     a rdf:Property , owl:ObjectProperty ;
