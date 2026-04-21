@@ -187,6 +187,12 @@ dgcs:Overlay
     rdfs:comment "An overlay always uses an image for background, optionally a custom font too" ;
     rdfs:subClassOf dgcs:BlockImage .
 
+dgcs:about
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "about" .
+
 dgcs:alignment
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:Image ;
