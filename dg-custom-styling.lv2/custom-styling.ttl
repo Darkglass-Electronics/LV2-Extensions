@@ -191,7 +191,8 @@ dgcs:about
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettings ;
     rdfs:range dgcs:Image ;
-    rdfs:label "about" .
+    rdfs:label "about" ;
+    rdfs:comment "There are no strict restrictions on size, it will be scrollable if necessary." .
 
 dgcs:alignment
     a rdf:Property , owl:ObjectProperty ;
