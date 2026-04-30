@@ -54,3 +54,8 @@ dgprops:savedToPreset
     a lv2:PortProperty ;
     rdfs:label "saved to preset" ;
     rdfs:comment "Force a parameter or property to be saved to preset." .
+
+dgprops:noPreRun
+    a lv2:Feature ;
+    rdfs:label "no pre-run" ;
+    rdfs:comment "Plugin is not suitable for 0-sample pre-running." .
