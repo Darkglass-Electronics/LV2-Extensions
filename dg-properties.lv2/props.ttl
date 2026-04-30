@@ -37,6 +37,11 @@ dgprops:mayUpdateBlockedState
     rdfs:label "may get updated to blocked state" ;
     rdfs:comment "Plugin may report this parameter as blocked (value updates blocked and ignored by the host and the plugin) at run-time." .
 
+dgprops:noPreRun
+    a lv2:Feature ;
+    rdfs:label "no pre-run" ;
+    rdfs:comment "Plugin is not suitable for 0-sample pre-running." .
+
 dgprops:oneDecimalPoint
     a units:Unit ;
     rdfs:label "One Decimal Point" ;
