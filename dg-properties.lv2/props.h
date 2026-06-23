@@ -29,6 +29,7 @@
 #define LV2_DARKGLASS_PROPERTIES__abbreviation          LV2_DARKGLASS_PROPERTIES_PREFIX "abbreviation"
 #define LV2_DARKGLASS_PROPERTIES__blockImageOff         LV2_DARKGLASS_PROPERTIES_PREFIX "blockImageOff"
 #define LV2_DARKGLASS_PROPERTIES__blockImageOn          LV2_DARKGLASS_PROPERTIES_PREFIX "blockImageOn"
+#define LV2_DARKGLASS_PROPERTIES__expressionParameter   LV2_DARKGLASS_PROPERTIES_PREFIX "expressionParameter"
 #define LV2_DARKGLASS_PROPERTIES__mayUpdateBlockedState LV2_DARKGLASS_PROPERTIES_PREFIX "mayUpdateBlockedState"
 #define LV2_DARKGLASS_PROPERTIES__noPreRun              LV2_DARKGLASS_PROPERTIES_PREFIX "noPreRun"
 #define LV2_DARKGLASS_PROPERTIES__oneDecimalPoint       LV2_DARKGLASS_PROPERTIES_PREFIX "oneDecimalPoint"
