@@ -32,10 +32,10 @@ dgprops:blockImageOn
     rdfs:label "block image on" ;
     rdfs:comment "Path to a in-bundle/local  200x200 PNG image file to be used as the plugin's block image asset when ON." .
 
-dgprops:expressionParameter
+dgprops:expressionPedalControl
     a lv2:PortProperty ;
-    rdfs:label "expression parameter" ;
-    rdfs:comment "Designed for expression pedal use. Can be suggested for expression binding." .
+    rdfs:label "expression pedal control" ;
+    rdfs:comment "Designed for expression pedal use. Can be suggested for expression pedal binding." .
 
 dgprops:mayUpdateBlockedState
     a lv2:PortProperty ;
