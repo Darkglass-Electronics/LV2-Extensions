@@ -1,6 +1,6 @@
 /*
   LV2 Control Port State Update extension
-  Copyright 2025 Darkglass Electronics
+  Copyright 2025-2026 Darkglass Electronics Oy
 
   Permission to use, copy, modify, and/or distribute this software for any
   purpose with or without fee is hereby granted, provided that the above
@@ -20,8 +20,8 @@
    C header for the LV2 Control Port State Update extension <http://www.darkglass.com/lv2/ns/lv2ext/control-port-state-update>.
 */
 
-#ifndef LV2_CONTROL_PORT_STATE_UPDATE_H
-#define LV2_CONTROL_PORT_STATE_UPDATE_H
+#ifndef LV2_DARKGLASS_CONTROL_PORT_STATE_UPDATE_H
+#define LV2_DARKGLASS_CONTROL_PORT_STATE_UPDATE_H
 
 #if defined(__has_include) && __has_include("lv2/core/lv2.h")
 #include "lv2/core/lv2.h"
@@ -62,7 +62,7 @@ typedef void* LV2_Control_Port_State_Update_Handle;
 */
 typedef struct _LV2_Control_Port_State_Update {
     /**
-     *  Opaque host data.
+     * Opaque host data.
      */
     LV2_Control_Port_State_Update_Handle handle;
 
@@ -88,4 +88,4 @@ typedef struct _LV2_Control_Port_State_Update {
 } /* extern "C" */
 #endif
 
-#endif /* LV2_CONTROL_PORT_STATE_UPDATE_H */
+#endif /* LV2_DARKGLASS_CONTROL_PORT_STATE_UPDATE_H */

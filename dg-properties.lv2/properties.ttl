@@ -9,8 +9,8 @@
 
 <http://www.darkglass.com/lv2/ns>
     a owl:Ontology ;
-    rdfs:seeAlso <props.h> ,
-        <props.doap.ttl> ,
+    rdfs:seeAlso <properties.h> ,
+        <properties.doap.ttl> ,
         <../dg-meta/meta.ttl> ;
     rdfs:comment "A set of custom LV2 properties created by and for Darkglass related products." .
 

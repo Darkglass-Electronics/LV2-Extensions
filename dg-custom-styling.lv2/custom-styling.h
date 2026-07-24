@@ -16,7 +16,7 @@
 */
 
 /**
-   @file lv2_darkglass_custom_styling.h
+   @file custom-styling.h
    C header for the LV2 Darkglass Custom Styling extension <http://www.darkglass.com/lv2/ns/lv2ext/custom-styling>.
 */
 
