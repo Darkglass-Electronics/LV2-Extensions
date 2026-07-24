@@ -1,0 +1,22 @@
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.darkglass.com/lv2/ns/lv2ext/license>
+    a doap:Project ;
+    rdfs:seeAlso <../dg-meta/meta.ttl> ;
+    doap:license <http://opensource.org/licenses/isc> ;
+    doap:name "License" ;
+    doap:homepage <http://www.darkglass.com/lv2/ns/lv2ext/license> ;
+    doap:created "2026-07-25" ;
+    doap:shortdesc "LV2 interface for plugins to handle licensing and copy-protection." ;
+    doap:developer [
+        foaf:name "Darkglass" ;
+        foaf:homepage <https://www.darkglass.com/> ;
+        foaf:mbox <mailto:contact@darkglass.com> ;
+    ] ;
+    doap:maintainer [
+        foaf:name "Darkglass" ;
+        foaf:homepage <https://www.darkglass.com/> ;
+        foaf:mbox <mailto:contact@darkglass.com> ;
+    ] .

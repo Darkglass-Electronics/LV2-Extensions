@@ -1,6 +1,6 @@
 /*
   LV2 Darkglass Properties Extension
-  Copyright 2024-2025 Filipe Coelho <falktx@darkglass.com>
+  Copyright 2024-2026 Darkglass Electronics Oy
 
   Permission to use, copy, modify, and/or distribute this software for any
   purpose with or without fee is hereby granted, provided that the above
@@ -16,7 +16,7 @@
 */
 
 /**
-   @file lv2_darkglass_properties.h
+   @file properties.h
    C header for the LV2 Darkglass Properties extension <http://www.darkglass.com/lv2/ns>.
 */
 

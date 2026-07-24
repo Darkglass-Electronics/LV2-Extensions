@@ -1,0 +1,15 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.darkglass.com/lv2/ns/lv2ext/license>
+    a owl:Ontology ,
+        lv2:Feature ;
+    rdfs:seeAlso <license.h> ,
+        <license.doap.ttl> ,
+        <../dg-meta/meta.ttl> ;
+    lv2:documentation """
+<p>
+    <a href="http://lv2plug.in/ns/lv2core#Specification" target="_blank">LV2 interface</a> for plugins to handle licensing and copy-protection.
+</p>
+""" .
