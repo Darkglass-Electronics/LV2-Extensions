@@ -3,6 +3,6 @@
 
 <http://www.darkglass.com/lv2/ns/lv2ext/license>
     a lv2:Specification ;
-    lv2:minorVersion 1 ;
+    lv2:minorVersion 2 ;
     lv2:microVersion 0 ;
     rdfs:seeAlso <license.ttl> .

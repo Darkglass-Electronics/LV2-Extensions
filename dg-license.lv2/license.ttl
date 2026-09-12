@@ -1,6 +1,7 @@
-@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
+@prefix licns: <http://www.darkglass.com/lv2/ns/lv2ext/license#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://www.darkglass.com/lv2/ns/lv2ext/license>
     a owl:Ontology ,
@@ -13,3 +14,19 @@
     <a href="http://lv2plug.in/ns/lv2core#Specification" target="_blank">LV2 interface</a> for plugins to handle licensing and copy-protection.
 </p>
 """ .
+
+licns:feature
+    a lv2:Feature ;
+    rdfs:label "license feature" ;
+    rdfs:comment "Host provided feature for requesting the contents of a URI-specific license file." .
+
+licns:interface
+    a lv2:ExtensionData ;
+    rdfs:label "license interface" ;
+    rdfs:comment "Plugin provided interface for querying information about a plugin's license." .
+
+licns:uri
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:range rdf:Property ;
+    rdfs:label "license uri" ;
+    rdfs:comment "An URI that a plugin will check the license for." .
