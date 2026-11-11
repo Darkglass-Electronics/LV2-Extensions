@@ -433,7 +433,7 @@ dgcs:templatesButton
     rdfs:domain dgcs:BlockSettingsTopBar ;
     rdfs:range dgcs:Image ;
     rdfs:label "templates button" ;
-    rdfs:comment "The top-bar templates button, for showing plugin presets (called "templates" on Anagram)." .
+    rdfs:comment "The top-bar templates button, for showing plugin presets (called 'templates' on Anagram)." .
 
 dgcs:toggle
     a rdf:Property , owl:ObjectProperty ;
