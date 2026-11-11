@@ -428,6 +428,13 @@ dgcs:style
     rdfs:label "style" ;
     rdfs:comment "Alternative style to apply to a parameter widget." .
 
+dgcs:templatesButton
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettingsTopBar ;
+    rdfs:range dgcs:Image ;
+    rdfs:label "templates button" ;
+    rdfs:comment "The top-bar templates button, for showing plugin presets (called "templates" on Anagram)." .
+
 dgcs:toggle
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettings ;
