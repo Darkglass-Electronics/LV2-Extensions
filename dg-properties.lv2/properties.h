@@ -30,6 +30,7 @@
 #define LV2_DARKGLASS_PROPERTIES__blockImageOff           LV2_DARKGLASS_PROPERTIES_PREFIX "blockImageOff"
 #define LV2_DARKGLASS_PROPERTIES__blockImageOn            LV2_DARKGLASS_PROPERTIES_PREFIX "blockImageOn"
 #define LV2_DARKGLASS_PROPERTIES__expressionPedalControl  LV2_DARKGLASS_PROPERTIES_PREFIX "expressionPedalControl"
+#define LV2_DARKGLASS_PROPERTIES__hold                    LV2_DARKGLASS_PROPERTIES_PREFIX "hold"
 #define LV2_DARKGLASS_PROPERTIES__mayUpdateBlockedState   LV2_DARKGLASS_PROPERTIES_PREFIX "mayUpdateBlockedState"
 #define LV2_DARKGLASS_PROPERTIES__noPreRun                LV2_DARKGLASS_PROPERTIES_PREFIX "noPreRun"
 #define LV2_DARKGLASS_PROPERTIES__oneDecimalPoint         LV2_DARKGLASS_PROPERTIES_PREFIX "oneDecimalPoint"
