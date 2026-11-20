@@ -38,14 +38,15 @@ dgprops:expressionPedalControl
     rdfs:comment "Designed for expression pedal use. Can be suggested for expression pedal binding." .
 
 dgprops:hold
-    a rdf:Property , owl:DatatypeProperty ;
+    a rdf:Property , owl:DatatypeProperty , lv2:PortProperty ;
     rdfs:range xsd:float ;
     rdfs:label "hold" ;
     rdfs:comment """
 The parameter is of hold type, meaning it is always "off" (minimum) and only "on" (maximum) when pressed down or "hold".
 When applied to a Control Port the default value MUST be equal to the minimum;
 the host changes it to maximum temporarily while pressed and automatically reverts to default or minimum when released.
-Can also be used as a designation, to indicate the main hold parameter of a plugin." .
+Can also be used as a designation, to indicate the main hold parameter of a plugin.
+""" .
 
 dgprops:mayUpdateBlockedState
     a lv2:PortProperty ;

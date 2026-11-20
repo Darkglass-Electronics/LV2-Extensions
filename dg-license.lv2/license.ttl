@@ -28,6 +28,6 @@ licns:interface
 
 licns:uri
     a rdf:Property , owl:ObjectProperty ;
-    rdfs:range rdf:Property ;
+    rdfs:range lv2:PluginBase ;
     rdfs:label "license uri" ;
     rdfs:comment "An URI that a plugin will check the license for." .
