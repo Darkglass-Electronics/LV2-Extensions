@@ -16,3 +16,11 @@
     a foaf:Person ;
     foaf:name "Filipe Coelho" ;
     foaf:mbox <mailto:falktx@darkglass.com> .
+
+<urn:darkglass:annie>
+    a rdf:Property ;
+    rdfs:label "annie" .
+
+<urn:darkglass:pablito>
+    a rdf:Property ;
+    rdfs:label "pablito" .
