@@ -324,6 +324,12 @@ dgcs:height
     rdfs:label "height" ;
     rdfs:comment "Height of a single frame of a block image parameter." .
 
+dgcs:hold
+    a rdf:Property , owl:ObjectProperty ;
+    rdfs:domain dgcs:BlockSettings ;
+    rdfs:range dgcs:BlockSettingsDefaultWidget ;
+    rdfs:label "hold" .
+
 dgcs:knob
     a rdf:Property , owl:ObjectProperty ;
     rdfs:domain dgcs:BlockSettings ;
